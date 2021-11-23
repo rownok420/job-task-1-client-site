@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { Container } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const Login = () => {
     // form validation rules
@@ -39,10 +40,26 @@ const Login = () => {
     const { errors } = formState;
 
     function onSubmit(data) {
-        // display form data on success
-        // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-        // return false;
         console.log(data);
+        fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.insertedId) {
+                    Swal.fire(
+                        'Welcome!',
+                        'Successfully Registered!',
+                        'success'
+                      )
+                    // history.push("/home");
+                    reset();
+                }
+            });
     }
     return (
         <div className="my-5">
