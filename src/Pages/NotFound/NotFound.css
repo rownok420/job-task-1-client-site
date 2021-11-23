@@ -1,0 +1,22 @@
+.text{
+    color: #00a3c8;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.home-button{
+    margin-top: 15px;
+    border: none;
+    color: white;
+    background-color: #00a3c8;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+
+@media only screen and (max-width: 767px) {
+    .notFound-img{
+        width: 100% !important;
+    }
+}

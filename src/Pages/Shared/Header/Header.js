@@ -9,7 +9,7 @@ const Header = () => {
         color: "#00a3c8",
     };
     return (
-        <Navbar className="nav-style sticky-top" expand="xl">
+        <Navbar className="nav-style sticky-top" expand="lg">
             <Container fluid>
                 <Navbar.Brand className="p-0">
                     <NavLink to="/">
@@ -28,11 +28,8 @@ const Header = () => {
                         <NavLink activeStyle={activeStyle} to="/home">
                             Home
                         </NavLink>
-                        <NavLink activeStyle={activeStyle} to="/about">
-                            About us
-                        </NavLink>
-                        <NavLink activeStyle={activeStyle} to="/explore">
-                            Explore
+                        <NavLink activeStyle={activeStyle} to="/allUsers">
+                            All Users
                         </NavLink>
                     </Nav>
                 </Navbar.Collapse>

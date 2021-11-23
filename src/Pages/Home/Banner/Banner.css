@@ -20,18 +20,6 @@
     letter-spacing: 2px;
 }
 
-.home-button{
-    margin-top: 15px;
-    border: none;
-    color: white;
-    background-color: #00a3c8;
-    padding: 12px 28px;
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: 18px;
-
-}
-
 
 @media only screen and (max-width: 768px) {
     .banner-heading{
