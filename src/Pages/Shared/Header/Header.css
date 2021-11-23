@@ -1,0 +1,31 @@
+.logo{
+    height: 45px;
+}
+
+.nav-style{
+    background-color: white !important;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    overflow: hidden;
+}
+
+nav a, .name-style {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Libre Baskerville', serif;
+    transition: .2s;
+
+}
+
+nav a:hover{
+    color: #00a3c8;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .logo{
+        height: 34px;
+    }
+}

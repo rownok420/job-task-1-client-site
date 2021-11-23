@@ -1,0 +1,41 @@
+.bg-img{
+    background: linear-gradient(rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url('../../../images/manage.76aa8fd9.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.banner-heading{
+    font-size: 60px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.home-button{
+    margin-top: 15px;
+    border: none;
+    color: white;
+    background-color: #00a3c8;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .banner-heading{
+        font-size: 36px;
+        
+    }
+}
