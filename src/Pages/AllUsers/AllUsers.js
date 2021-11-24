@@ -8,7 +8,7 @@ const AllUsers = () => {
 
     // fetch data from database
     useEffect(() => {
-        fetch("http://localhost:5000/users")
+        fetch("https://obscure-chamber-37714.herokuapp.com/users")
             .then((res) => res.json())
             .then((data) => setUsers(data));
     }, []);
@@ -17,7 +17,7 @@ const AllUsers = () => {
     const handleDeleteOrder = (id) => {
         const proceed = window.confirm("Are you sure!!! you want to delete user?");
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`https://obscure-chamber-37714.herokuapp.com/users/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())

@@ -44,7 +44,7 @@ const Register = () => {
 
     function onSubmit(data) {
         console.log(data);
-        fetch("http://localhost:5000/users", {
+        fetch("https://obscure-chamber-37714.herokuapp.com/users", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
