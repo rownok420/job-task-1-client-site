@@ -65,7 +65,7 @@ const Register = () => {
             });
     }
     return (
-        <div className="my-5">
+        <div style={{marginTop: "100px"}} className="mb-5">
             <Container>
                 <div className="card m-3 w-75 mx-auto">
                     <h2 className="card-header text-center py-4">Register</h2>

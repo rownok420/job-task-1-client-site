@@ -1,0 +1,7 @@
+.links a {
+    color: white !important;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
