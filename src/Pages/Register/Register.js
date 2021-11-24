@@ -4,8 +4,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { Container } from "react-bootstrap";
 import Swal from "sweetalert2";
+import { useHistory } from "react-router";
+import './Register.css'
 
-const Login = () => {
+const Register = () => {
+    const history = useHistory();
     // form validation rules
     const validationSchema = Yup.object().shape({
         title: Yup.string().required("Title is required"),
@@ -52,11 +55,11 @@ const Login = () => {
             .then((data) => {
                 if (data.insertedId) {
                     Swal.fire(
-                        'Welcome!',
-                        'Successfully Registered!',
-                        'success'
-                      )
-                    // history.push("/home");
+                        "Welcome!",
+                        "Successfully Registered!",
+                        "success"
+                    );
+                    history.push("/allUsers");
                     reset();
                 }
             });
@@ -69,7 +72,7 @@ const Login = () => {
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-row">
-                                <div className="form-group col">
+                                <div className="form-group col my-3">
                                     <label>Title</label>
                                     <select
                                         name="title"
@@ -88,37 +91,45 @@ const Login = () => {
                                         {errors.title?.message}
                                     </div>
                                 </div>
-                                <div className="form-group col-5">
-                                    <label>First Name</label>
-                                    <input
-                                        name="firstName"
-                                        type="text"
-                                        {...register("firstName")}
-                                        className={`form-control ${
-                                            errors.firstName ? "is-invalid" : ""
-                                        }`}
-                                    />
-                                    <div className="invalid-feedback">
-                                        {errors.firstName?.message}
+                                <div className="d-flex justify-content-center align-items-center mb-3">
+                                    <div className="form-group me-2  w-100">
+                                        <label>First Name</label>
+                                        <input
+                                            name="firstName"
+                                            type="text"
+                                            placeholder="First name"
+                                            {...register("firstName")}
+                                            className={`form-control ${
+                                                errors.firstName
+                                                    ? "is-invalid"
+                                                    : ""
+                                            }`}
+                                        />
+                                        <div className="invalid-feedback">
+                                            {errors.firstName?.message}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="form-group col-5">
-                                    <label>Last Name</label>
-                                    <input
-                                        name="lastName"
-                                        type="text"
-                                        {...register("lastName")}
-                                        className={`form-control ${
-                                            errors.lastName ? "is-invalid" : ""
-                                        }`}
-                                    />
-                                    <div className="invalid-feedback">
-                                        {errors.lastName?.message}
+                                    <div className="form-group  w-100">
+                                        <label>Last Name</label>
+                                        <input
+                                            name="lastName"
+                                            type="text"
+                                            placeholder="Last name"
+                                            {...register("lastName")}
+                                            className={`form-control ${
+                                                errors.lastName
+                                                    ? "is-invalid"
+                                                    : ""
+                                            }`}
+                                        />
+                                        <div className="invalid-feedback">
+                                            {errors.lastName?.message}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="form-row">
-                                <div className="form-group col">
+                                <div className="form-group col mb-3">
                                     <label>Date of Birth</label>
                                     <input
                                         name="dob"
@@ -132,11 +143,12 @@ const Login = () => {
                                         {errors.dob?.message}
                                     </div>
                                 </div>
-                                <div className="form-group col">
+                                <div className="form-group col mb-3">
                                     <label>Email</label>
                                     <input
                                         name="email"
                                         type="text"
+                                        placeholder="Email address"
                                         {...register("email")}
                                         className={`form-control ${
                                             errors.email ? "is-invalid" : ""
@@ -148,11 +160,12 @@ const Login = () => {
                                 </div>
                             </div>
                             <div className="form-row">
-                                <div className="form-group col">
+                                <div className="form-group col mb-3">
                                     <label>Contact Number</label>
                                     <input
                                         name="contact"
                                         type="number"
+                                        placeholder="Contact number"
                                         {...register("contact")}
                                         className={`form-control ${
                                             errors.contact ? "is-invalid" : ""
@@ -162,11 +175,12 @@ const Login = () => {
                                         {errors.contact?.message}
                                     </div>
                                 </div>
-                                <div className="form-group col">
+                                <div className="form-group col mb-3">
                                     <label>Address</label>
                                     <input
                                         name="address"
                                         type="text"
+                                        placeholder="Your address"
                                         {...register("address")}
                                         className={`form-control ${
                                             errors.address ? "is-invalid" : ""
@@ -177,7 +191,7 @@ const Login = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="form-group form-check">
+                            <div className="form-group form-check mb-3">
                                 <input
                                     name="acceptTerms"
                                     type="checkbox"
@@ -200,14 +214,14 @@ const Login = () => {
                             <div className="form-group">
                                 <button
                                     type="submit"
-                                    className="btn btn-primary mr-1"
+                                    className="btn btn-primary me-2 py-2 px-4 fw-bold"
                                 >
                                     Register
                                 </button>
                                 <button
                                     type="button"
                                     onClick={() => reset()}
-                                    className="btn btn-secondary"
+                                    className="btn btn-secondary py-2 px-4 fw-bold"
                                 >
                                     Reset
                                 </button>
@@ -220,4 +234,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

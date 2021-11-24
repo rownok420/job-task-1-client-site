@@ -1,0 +1,27 @@
+.all-users-banner{
+    background: linear-gradient(rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url('../../images/manage.76aa8fd9.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.heading{
+    font-size: 45px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.dotted-hr{
+    border: 8px dotted black;
+    border-top: none;
+    background-color: unset;
+    width: 200px;
+    margin: auto;
+}
