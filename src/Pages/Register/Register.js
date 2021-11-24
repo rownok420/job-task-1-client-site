@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { Container } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router";
-import './Register.css'
+import "./Register.css";
 
 const Register = () => {
     const history = useHistory();
@@ -65,171 +65,181 @@ const Register = () => {
             });
     }
     return (
-        <div style={{marginTop: "100px"}} className="mb-5">
-            <Container>
-                <div className="card m-3 w-75 mx-auto">
-                    <h2 className="card-header text-center py-4">Register</h2>
-                    <div className="card-body">
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-row">
-                                <div className="form-group col my-3">
-                                    <label>Title</label>
-                                    <select
-                                        name="title"
-                                        {...register("title")}
-                                        className={`form-control ${
-                                            errors.title ? "is-invalid" : ""
+        <div style={{backgroundColor: "#f3f2f0"}}>
+            <div style={{ paddingTop: "100px" }} className="pb-5">
+                <Container>
+                    <div className="card m-3 w-75 mx-auto">
+                        <h2 className="card-header text-center py-4">
+                            Register
+                        </h2>
+                        <div className="card-body">
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <div className="form-row">
+                                    <div className="form-group col my-3">
+                                        <label>Title</label>
+                                        <select
+                                            name="title"
+                                            {...register("title")}
+                                            className={`form-control ${
+                                                errors.title ? "is-invalid" : ""
+                                            }`}
+                                        >
+                                            <option value=""></option>
+                                            <option value="Mr">Mr</option>
+                                            <option value="Mrs">Mrs</option>
+                                            <option value="Miss">Miss</option>
+                                            <option value="Ms">Ms</option>
+                                        </select>
+                                        <div className="invalid-feedback">
+                                            {errors.title?.message}
+                                        </div>
+                                    </div>
+                                    <div className="d-flex justify-content-center align-items-center mb-3">
+                                        <div className="form-group me-2  w-100">
+                                            <label>First Name</label>
+                                            <input
+                                                name="firstName"
+                                                type="text"
+                                                placeholder="First name"
+                                                {...register("firstName")}
+                                                className={`form-control ${
+                                                    errors.firstName
+                                                        ? "is-invalid"
+                                                        : ""
+                                                }`}
+                                            />
+                                            <div className="invalid-feedback">
+                                                {errors.firstName?.message}
+                                            </div>
+                                        </div>
+                                        <div className="form-group  w-100">
+                                            <label>Last Name</label>
+                                            <input
+                                                name="lastName"
+                                                type="text"
+                                                placeholder="Last name"
+                                                {...register("lastName")}
+                                                className={`form-control ${
+                                                    errors.lastName
+                                                        ? "is-invalid"
+                                                        : ""
+                                                }`}
+                                            />
+                                            <div className="invalid-feedback">
+                                                {errors.lastName?.message}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col mb-3">
+                                        <label>Date of Birth</label>
+                                        <input
+                                            name="dob"
+                                            type="date"
+                                            {...register("dob")}
+                                            className={`form-control ${
+                                                errors.dob ? "is-invalid" : ""
+                                            }`}
+                                        />
+                                        <div className="invalid-feedback">
+                                            {errors.dob?.message}
+                                        </div>
+                                    </div>
+                                    <div className="form-group col mb-3">
+                                        <label>Email</label>
+                                        <input
+                                            name="email"
+                                            type="text"
+                                            placeholder="Email address"
+                                            {...register("email")}
+                                            className={`form-control ${
+                                                errors.email ? "is-invalid" : ""
+                                            }`}
+                                        />
+                                        <div className="invalid-feedback">
+                                            {errors.email?.message}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col mb-3">
+                                        <label>Contact Number</label>
+                                        <input
+                                            name="contact"
+                                            type="number"
+                                            placeholder="Contact number"
+                                            {...register("contact")}
+                                            className={`form-control ${
+                                                errors.contact
+                                                    ? "is-invalid"
+                                                    : ""
+                                            }`}
+                                        />
+                                        <div className="invalid-feedback">
+                                            {errors.contact?.message}
+                                        </div>
+                                    </div>
+                                    <div className="form-group col mb-3">
+                                        <label>Address</label>
+                                        <input
+                                            name="address"
+                                            type="text"
+                                            placeholder="Your address"
+                                            {...register("address")}
+                                            className={`form-control ${
+                                                errors.address
+                                                    ? "is-invalid"
+                                                    : ""
+                                            }`}
+                                        />
+                                        <div className="invalid-feedback">
+                                            {errors.address?.message}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="form-group form-check mb-3">
+                                    <input
+                                        name="acceptTerms"
+                                        type="checkbox"
+                                        {...register("acceptTerms")}
+                                        id="acceptTerms"
+                                        className={`form-check-input ${
+                                            errors.acceptTerms
+                                                ? "is-invalid"
+                                                : ""
                                         }`}
+                                    />
+                                    <label
+                                        htmlFor="acceptTerms"
+                                        className="form-check-label"
                                     >
-                                        <option value=""></option>
-                                        <option value="Mr">Mr</option>
-                                        <option value="Mrs">Mrs</option>
-                                        <option value="Miss">Miss</option>
-                                        <option value="Ms">Ms</option>
-                                    </select>
+                                        Accept Terms & Conditions
+                                    </label>
                                     <div className="invalid-feedback">
-                                        {errors.title?.message}
+                                        {errors.acceptTerms?.message}
                                     </div>
                                 </div>
-                                <div className="d-flex justify-content-center align-items-center mb-3">
-                                    <div className="form-group me-2  w-100">
-                                        <label>First Name</label>
-                                        <input
-                                            name="firstName"
-                                            type="text"
-                                            placeholder="First name"
-                                            {...register("firstName")}
-                                            className={`form-control ${
-                                                errors.firstName
-                                                    ? "is-invalid"
-                                                    : ""
-                                            }`}
-                                        />
-                                        <div className="invalid-feedback">
-                                            {errors.firstName?.message}
-                                        </div>
-                                    </div>
-                                    <div className="form-group  w-100">
-                                        <label>Last Name</label>
-                                        <input
-                                            name="lastName"
-                                            type="text"
-                                            placeholder="Last name"
-                                            {...register("lastName")}
-                                            className={`form-control ${
-                                                errors.lastName
-                                                    ? "is-invalid"
-                                                    : ""
-                                            }`}
-                                        />
-                                        <div className="invalid-feedback">
-                                            {errors.lastName?.message}
-                                        </div>
-                                    </div>
+                                <div className="form-group">
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary me-2 py-2 px-4 fw-bold"
+                                    >
+                                        Register
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => reset()}
+                                        className="btn btn-secondary py-2 px-4 fw-bold"
+                                    >
+                                        Reset
+                                    </button>
                                 </div>
-                            </div>
-                            <div className="form-row">
-                                <div className="form-group col mb-3">
-                                    <label>Date of Birth</label>
-                                    <input
-                                        name="dob"
-                                        type="date"
-                                        {...register("dob")}
-                                        className={`form-control ${
-                                            errors.dob ? "is-invalid" : ""
-                                        }`}
-                                    />
-                                    <div className="invalid-feedback">
-                                        {errors.dob?.message}
-                                    </div>
-                                </div>
-                                <div className="form-group col mb-3">
-                                    <label>Email</label>
-                                    <input
-                                        name="email"
-                                        type="text"
-                                        placeholder="Email address"
-                                        {...register("email")}
-                                        className={`form-control ${
-                                            errors.email ? "is-invalid" : ""
-                                        }`}
-                                    />
-                                    <div className="invalid-feedback">
-                                        {errors.email?.message}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="form-row">
-                                <div className="form-group col mb-3">
-                                    <label>Contact Number</label>
-                                    <input
-                                        name="contact"
-                                        type="number"
-                                        placeholder="Contact number"
-                                        {...register("contact")}
-                                        className={`form-control ${
-                                            errors.contact ? "is-invalid" : ""
-                                        }`}
-                                    />
-                                    <div className="invalid-feedback">
-                                        {errors.contact?.message}
-                                    </div>
-                                </div>
-                                <div className="form-group col mb-3">
-                                    <label>Address</label>
-                                    <input
-                                        name="address"
-                                        type="text"
-                                        placeholder="Your address"
-                                        {...register("address")}
-                                        className={`form-control ${
-                                            errors.address ? "is-invalid" : ""
-                                        }`}
-                                    />
-                                    <div className="invalid-feedback">
-                                        {errors.address?.message}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="form-group form-check mb-3">
-                                <input
-                                    name="acceptTerms"
-                                    type="checkbox"
-                                    {...register("acceptTerms")}
-                                    id="acceptTerms"
-                                    className={`form-check-input ${
-                                        errors.acceptTerms ? "is-invalid" : ""
-                                    }`}
-                                />
-                                <label
-                                    htmlFor="acceptTerms"
-                                    className="form-check-label"
-                                >
-                                    Accept Terms & Conditions
-                                </label>
-                                <div className="invalid-feedback">
-                                    {errors.acceptTerms?.message}
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary me-2 py-2 px-4 fw-bold"
-                                >
-                                    Register
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={() => reset()}
-                                    className="btn btn-secondary py-2 px-4 fw-bold"
-                                >
-                                    Reset
-                                </button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </div>
     );
 };
